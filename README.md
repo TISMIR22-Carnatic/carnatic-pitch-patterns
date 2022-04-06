@@ -22,7 +22,7 @@ carnatic-pitch-patterns
     results
 ```
 
-Let us go through each implementation detailing the running instructions.
+Let us go through each implementation detailing the running instructions:
 #### 1. carnatic-melody-synthesis
 #### 2. FTANet-melodic
 #### 3. melodic-pattern-discovery

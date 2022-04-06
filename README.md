@@ -2,7 +2,7 @@
 This is an anonimized common repository including all the implementations, pre-trained models, links and audio examples of our submission to the Speciall Call on Cultural Diversity in MIR from the TISMIR journal. 
 
 ## Important links
-* [Saraga-Carnatic-Melody-Synth](https://zenodo.org/record/5553925) (anonimized Zenodo entry)
+* [Saraga-Carnatic-Melody-Synth](https://zenodo.org/record/5553925) (anonimized Zenodo entry, to be added in the paper)
 
 ## Repository structure and running instructions
 In this repository to can find the following implementations:

@@ -3,6 +3,8 @@ import pickle, json
 import mirdata
 from pathlib import Path
 
+import config
+
 
 def split_into_chunks(track, length):
     # Split audio stream into chunks of certain length
@@ -68,7 +70,7 @@ def get_artist_song_mapping(dataset_path, output_path):
             artist_song_mapping[artist_name].append(formatted_id)
     
     dataset_mapping = get_dataset_mapping(
-        data_path=os.path.join(Path().absolute(), 'resources', 'Saraga-Synth-Dataset', 'experiments_4')
+        data_path=os.path.join(Path().absolute(), 'resources', 'Saraga-Carnatic-Melody-Synth')
     )
     
     artists_tracks_mapping = {}
@@ -88,3 +90,10 @@ def get_artist_song_mapping(dataset_path, output_path):
     
     with open(os.path.join(output_path, 'artists_to_track_mapping.json'), 'w') as map_file:
         json.dump(artists_tracks_mapping, map_file)
+
+
+if __name__ == '__main__':
+    get_artist_song_mapping(
+        dataset_path=config.DATASET_PATH,
+        output_path=
+        )

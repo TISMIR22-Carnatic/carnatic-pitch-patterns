@@ -22,7 +22,6 @@ carnatic-pitch-patterns
     results
 ```
 
-Let us go through each implementation detailing the running instructions:
-#### 1. carnatic-melody-synthesis
-#### 2. FTANet-melodic
-#### 3. melodic-pattern-discovery
+In each folder we provide:
+* The complete Python implementations
+* A specific `README.md` file with instructions and documentation to reproduce the experiments.

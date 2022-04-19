@@ -10,7 +10,7 @@ In this repository to can find the following implementations:
 carnatic-pitch-patterns
     |
     carnatic-melody-synthesis
-    FTANet-melodic
+    FTANet-carnatic
         |
         training
         evaluation

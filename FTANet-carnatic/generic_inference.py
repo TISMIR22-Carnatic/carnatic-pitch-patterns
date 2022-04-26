@@ -9,6 +9,7 @@ import tempfile
 import soundfile as sf
 import os
 import math
+import argparse
 from pathlib import Path
 
 from constant import *
@@ -181,18 +182,6 @@ def get_pitch_track(model, file_in, file_out):
         print(np.shape(times), np.shape(freqs))
 
 
-def get_pitch_track_melodia(file_in, file_out):
-    melodia_extractor = estd.PredominantPitchMelodia(frameSize=2049, hopSize=256)
-    audio = estd.EqloudLoader(filename=file_in, sampleRate=44100)()
-    est_freq, _ = melodia_extractor(audio)
-    est_freq = np.append(est_freq, 0.0)
-    est_time = np.linspace(0.0, len(audio) / 8000, len(est_freq))
-    est_freq = interpolate_below_length(est_freq, 0.0, 0.25)
-    est_freq = gaussian_filter1d(est_freq, sigma=1)
-
-    est_arr_melodia = np.concatenate((est_time[:, None], est_freq[:, None]), axis=1)
-    save_pitch_track_to_dataset(file_out, est_time, est_freq)
-
 def save_pitch_track_to_dataset(filename, est_time, est_freq):
     # Write txt annotation to file
     with open(filename, 'w') as f:
@@ -211,30 +200,15 @@ def load_ftanet(model_path):
 
 
 if __name__ == '__main__':
-    example_saraga_tracks = [
-        'Karuna_Nidhi_Illalo',
-        'Eranapai',
-        'Sri_Raghuvara_Sugunaalaya',
-        'Paarengum',
-        'Janani',
-        'Chintayama_Kanda',
-        'Emani_Migula',
-        'Koti_Janmani',
-        'Kamakshi',
-        'Eranapai',
-        'Evarura',
-        'Amba_Kamakshi'
-    ]
-    model_path = os.path.join(Path().absolute(), 'model', 'SCM-S', 'OA')
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--model', default='SCM-S')
+    parser.add_argument('--file-in', default=None)
+    parser.add_argument('--file-out', default=None)
+    args = parser.parse_args()
+    model_path = os.path.join(Path().absolute(), 'model', args.model, 'OA')
     model = load_ftanet(model_path)
-    saraga_carnatic = mirdata.initialize('saraga_carnatic', data_home='PATH-TO-SCMS')
-    saraga_tracks = saraga_carnatic.load_tracks()
-    for idx in saraga_carnatic.track_ids:
-        if '_'.join(idx.split('_')[1:]) in example_saraga_tracks:
-            track = saraga_tracks[idx]
-            if track.audio_vocal_path:
-                file_in = track.audio_vocal_path
-            else:
-                file_in = track.audio_path
-            file_out = os.path.join(Path().absolute(), 'outputs', idx + '_vocal-melody.csv')
-            get_pitch_track(model, file_in, file_out)
+    if args.file_in is not None:
+        get_pitch_track(model, args.file_in, args.file_out)
+    else:
+        print('Please provide an input file to the --file-in argument')
+

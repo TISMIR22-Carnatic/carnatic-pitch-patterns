@@ -39,6 +39,7 @@ For some experiments, the Spleeter source separation library is applied to each 
 |MELODIA, MIX|`data/melodia_mix/`|Melodia applied to mix|`conf/four_experiments/melodia_mix.yaml`|
 |MELODIA-S, VOCAL|`data/melodia_spleeter/`|Melodia applied to vocal stem after Spleeter source separation |`conf/four_experiments/melodia_spleeter.yaml`|
 |MELODIA-S, MIX|`data/melodia_spleeter_mix/`|Melodia applied to mix after Spleeter source separation |`conf/four_experiments/melodia_spleeter_mix.yaml`|
+
 **Table 1** - Pitch tracks extracted from Koti Janmani - Akkarai Sisters
 
 #### Annotations
@@ -70,8 +71,11 @@ The plots included in the paper can be generated and using the code in `experime
 The pitch plots corresponding to each expert annotation using FTA-C, MIX and MELODIA-S, MIX can be found in `paper_plots/all_annotations/`. They are organised into folders of...
 
 **both_match** - both FTA-C, MIX and MELODIA-S matched this pattern
+
 **melodia_match** - only MELODIA-S matched this pattern
+
 **ftanet_match** - only FTA-C, MIX matched this pattern
+
 **no_match** - neither of the two processes matched this pattern
 
 

@@ -15,7 +15,7 @@ carnatic-pitch-patterns
         training
         evaluation
         pre-trained models
-    melodic-pattern-discovery
+    Melodic-Pattern-Dscovery
         |
         evaluation
         visualisation

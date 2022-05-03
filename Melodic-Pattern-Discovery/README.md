@@ -29,16 +29,16 @@ For some experiments, the Spleeter source separation library is applied to each 
 #### Pitch Tracks
 8 pitch tracks are extracted and detailed in Table 1
 
-|Alias|Folder|Method|Configuration File|
+|Alias|Location|Method|Configuration File|
 |--|--|--|--|
-|FTA-C, VOCAL|`data/ftanet/`|FTA-NET trained on IAM applied to vocal stem|`conf/four_experiments/ftanet.yaml`|
-|FTA-C, MIX|`data/ftanet_mix/`|FTA-NET trained on IAM applied to mix|`conf/four_experiments/ftanet_mix.yaml`|
-|FTA-W, VOCAL|`data/ftanet_western/`|FTA-NET trained on western music applied to vocal stem|`conf/four_experiments/ftanet_western.yaml`|
-|FTA-W, MIX|`data/ftanet_western_mix/`|FTA-NET trained on western music applied to mix|`conf/four_experiments/ftanet_western_mix.yaml`|
-|MELODIA, VOCAL|`data/melodia/`|Melodia applied to vocal stem|`conf/four_experiments/melodia.yaml`|
-|MELODIA, MIX|`data/melodia_mix/`|Melodia applied to mix|`conf/four_experiments/melodia_mix.yaml`|
-|MELODIA-S, VOCAL|`data/melodia_spleeter/`|Melodia applied to vocal stem after Spleeter source separation |`conf/four_experiments/melodia_spleeter.yaml`|
-|MELODIA-S, MIX|`data/melodia_spleeter_mix/`|Melodia applied to mix after Spleeter source separation |`conf/four_experiments/melodia_spleeter_mix.yaml`|
+|FTA-C, VOCAL|`data/ftanet/47_Koti_Janmani.csv`|FTA-NET trained on IAM applied to vocal stem|`conf/four_experiments/ftanet.yaml`|
+|FTA-C, MIX|`data/ftanet_mix/47_Koti_Janmani.csv`|FTA-NET trained on IAM applied to mix|`conf/four_experiments/ftanet_mix.yaml`|
+|FTA-W, VOCAL|`data/ftanet_western/47_Koti_Janmani.csv`|FTA-NET trained on western music applied to vocal stem|`conf/four_experiments/ftanet_western.yaml`|
+|FTA-W, MIX|`data/ftanet_western_mix/47_Koti_Janmani.csv`|FTA-NET trained on western music applied to mix|`conf/four_experiments/ftanet_western_mix.yaml`|
+|MELODIA, VOCAL|`data/melodia/47_Koti_Janmani.csv`|Melodia applied to vocal stem|`conf/four_experiments/melodia.yaml`|
+|MELODIA, MIX|`data/melodia_mix/47_Koti_Janmani.csv`|Melodia applied to mix|`conf/four_experiments/melodia_mix.yaml`|
+|MELODIA-S, VOCAL|`data/melodia_spleeter/47_Koti_Janmani.csv`|Melodia applied to vocal stem after Spleeter source separation |`conf/four_experiments/melodia_spleeter.yaml`|
+|MELODIA-S, MIX|`data/melodia_spleeter_mix/47_Koti_Janmani.csv`|Melodia applied to mix after Spleeter source separation |`conf/four_experiments/melodia_spleeter_mix.yaml`|
 
 **Table 1** - Pitch tracks extracted from Koti Janmani - Akkarai Sisters
 
